@@ -1,0 +1,27 @@
+{
+  "name": "graph-it",
+  "version": "1.0.0",
+  "description": "A web app that allows users to easily create and export graphs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanhamada/graph-it.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "sass",
+    "canvas",
+    "graph"
+  ],
+  "author": "Dylan H Dizon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanhamada/graph-it/issues"
+  },
+  "homepage": "https://github.com/dylanhamada/graph-it#readme"
+}
