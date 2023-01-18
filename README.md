@@ -9,6 +9,10 @@ This project is currently in the planning stages. Right now I've finished learni
 ### Week Three
 
 - Design mockup and wireframe on paper and Figma
+<figure>
+  <img src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1674068716/Graph-It/Screenshot_2023-01-18_140406.jpg" width="768" height="418" alt="Screenshot of Figma mockup">
+  <figcaption>A screenshot of Figma mockup of mobile layout.</figcaption>
+</figure>
 
 ### Week Two
 
