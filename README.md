@@ -6,13 +6,17 @@ A web app that allows users to easily create and export graphs.
 
 This project is currently in the planning stages. Right now I've finished learning the basics of HTML Canvas API, and am designing the features, functionality, and UI of the app.
 
+### Week Four
+
+- Design mockup on Figma
+<figure>
+  <img src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1674604596/Graph-It/Screenshot_2023-01-24_185449.jpg" width="768" height="418" alt="Screenshot of Figma mockup">
+  <figcaption>A screenshot of Figma mockup of mobile layout.</figcaption>
+</figure>
+
 ### Week Three
 
 - Design mockup and wireframe on paper and Figma
-<figure>
-  <img src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1674068716/Graph-It/Screenshot_2023-01-18_140406.jpg" width="768" height="418" alt="Screenshot of Figma mockup">
-  <figcaption>A screenshot of Figma mockup of mobile layout.</figcaption>
-</figure>
 
 ### Week Two
 
