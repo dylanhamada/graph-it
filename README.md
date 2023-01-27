@@ -10,7 +10,7 @@ This project is currently in the planning stages. Right now I've finished learni
 
 - Design mockup on Figma
 <figure>
-  <img src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1674688020/Graph-It/Screenshot_2023-01-25_180426.jpg" width="768" height="418" alt="Screenshot of Figma mockup">
+  <img src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1674854816/Graph-It/Screenshot_2023-01-27_154719.jpg" width="768" height="418" alt="Screenshot of Figma mockup">
   <figcaption>A screenshot of Figma mockup of mobile layout.</figcaption>
 </figure>
 
