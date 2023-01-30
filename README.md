@@ -4,7 +4,11 @@ A web app that allows users to easily create and export graphs.
 
 ## Project Status
 
-This project is currently in the planning stages. Right now I've finished learning the basics of HTML Canvas API, and am designing the features, functionality, and UI of the app.
+This project is currently in the prototyping stage. I am building a prototype of the canvas graph.
+
+### Week Five
+
+- Create prototype of graph on canvas
 
 ### Week Four
 
