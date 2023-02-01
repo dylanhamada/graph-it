@@ -4,62 +4,33 @@ const ctx = canvas.getContext("2d");
 canvas.width = 600;
 canvas.height = 400;
 
-// canvas and graph dimensions
 let canvasHeight = canvas.clientHeight;
 let canvasWidth = canvas.clientWidth;
-let graphWidth = canvasWidth * 0.75;
-let graphHeight = canvasHeight * 0.7;
-let extraX = (canvasWidth - graphWidth) / 2;
-let extraY = (canvasHeight - graphHeight) / 2;
+let graphWidth = canvasWidth * 0.7;
+let graphHeight = canvasHeight * 0.65;
 
-// calculate portions of graph
-const numLines = 5;
-const lineIntervals = graphHeight / numLines;
+// the canvas coordinates of the (0, 0) point on the graph
+let originX = canvasWidth * 0.15;
+let originY = canvasHeight * 0.85;
 
-// derived values from user input
-// maximum user-entered value
-const maxVal = 57;
-// value of top line on graph
-const maxGraph = Math.ceil((maxVal / numLines) * 1.05);
+// hypothetical user inputs or variables derived from inputs
+const maxUserVal = 59; // maximum value entered by a user
+const numLines = 6; // number of horizontal lines depending on how big the screen is
+let yIntervals = graphHeight / numLines; // the vertical space between lines on the graph
+let maxGraphVal = Math.ceil((maxUserVal * 1.05) / numLines) * numLines; // the vertical limit of the graph, calculated by going 5% above the maximum user limit and cleanly divisible by the number of lines
+let barHeight = (graphHeight / maxGraphVal) * maxUserVal; // the height of a bar, calculated by using a ratio of the graph height and max graph value, to the bar height (unknown) and user value
 
-function drawLines(numLines) {
+// use a loop to draw "numLines" number of lines on the graph
+for (let i = 0; i <= 6; i++) {
   ctx.lineWidth = 1;
-
-  for (let i = 0; i <= numLines; i++) {
-    ctx.beginPath();
-    // lines are drawn starting from the top
-    ctx.moveTo(extraX, extraY + lineIntervals * i);
-    ctx.lineTo(canvasWidth - extraX, extraY + lineIntervals * i);
-    ctx.stroke();
-  }
+  ctx.beginPath();
+  ctx.moveTo(originX, originY - yIntervals * i);
+  ctx.lineTo(originX + graphWidth, originY - yIntervals * i);
+  ctx.stroke();
 }
 
-function drawBar() {
-  // if graph bottom line is 0, and top is maxGraph, how to calculate height of a bar with y-value, k?
-  // say bottom line is 0, top is 60, and a bar has k of 37
-}
-
-drawLines(numLines);
-
-// const numBars = 6;
-// const maxHeight = 10;
-// // function to draw a bar
-// // function takes as arguments y-value, bar number (in sequence)
-// function drawBar(yVal, barNum) {
-//   // calculate bar width based on total bars to be rendered
-//   const barWidth = (graphWidth / numBars) * 0.75;
-//   // calculate starting x-position
-//   // if bar #1, draw it at origin (0, 0)
-//   const xPos = canvasWidth - graphWidth + barWidth * barNum;
-//   // calculate starting y-position
-//   const yPos = canvasHeight - graphHeight / 6;
-//   // calculate how "tall" to grow the bar
-//   const barHeight = (graphHeight / maxHeight) * yVal;
-//   console.log(barHeight);
-//   console.log(graphHeight);
-//   // fill rectangle
-//   ctx.fillStyle = "red";
-//   ctx.beginPath();
-//   ctx.roundRect(xPos, yPos, barWidth, -barHeight, [0, 0, 5, 5]);
-//   ctx.fill();
-// }
+// draw a bar on the graph that has value "59"
+ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.roundRect(originX, originY, 50, -barHeight, [0, 0, 4, 4]);
+ctx.fill();
