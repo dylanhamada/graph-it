@@ -14,11 +14,13 @@ let originX = canvasWidth * 0.15;
 let originY = canvasHeight * 0.85;
 
 // hypothetical user inputs or variables derived from inputs
-const maxUserVal = 59; // maximum value entered by a user
-const numLines = 6; // number of horizontal lines depending on how big the screen is
-let yIntervals = graphHeight / numLines; // the vertical space between lines on the graph
-let maxGraphVal = Math.ceil((maxUserVal * 1.05) / numLines) * numLines; // the vertical limit of the graph, calculated by going 5% above the maximum user limit and cleanly divisible by the number of lines
-let barHeight = (graphHeight / maxGraphVal) * maxUserVal; // the height of a bar, calculated by using a ratio of the graph height and max graph value, to the bar height (unknown) and user value
+const userVals = [20, 5, 15, 10, 15, 20];
+const maxUserVal = Math.max(...userVals); // maximum value in userVals
+const numLines = 6; // number of horizontal lines
+const yIntervals = graphHeight / numLines; // the vertical intervals between lines on the graph
+const xIntervals = graphWidth / userVals.length; // the horizontal intervals between bars on the graph
+const barWidth = xIntervals * 0.75; // the width of each bar, 75% the width of xIntervals
+const maxGraphVal = Math.ceil((maxUserVal * 1.05) / numLines) * numLines; // the vertical limit of the graph, calculated by going 5% above the maximum user limit and cleanly divisible by the number of lines
 
 // use a loop to draw "numLines" number of lines on the graph
 for (let i = 0; i <= 6; i++) {
@@ -29,8 +31,19 @@ for (let i = 0; i <= 6; i++) {
   ctx.stroke();
 }
 
-// draw a bar on the graph that has value "59"
-ctx.fillStyle = "red";
-ctx.beginPath();
-ctx.roundRect(originX, originY, 50, -barHeight, [0, 0, 4, 4]);
-ctx.fill();
+// function to draw a bar
+// take x-coord, width, height as arguments
+function drawBar(x, yVal) {
+  // calculate pixel height of bar using ratio of graph max height and value to bar height and user value
+  const barHeight = (graphHeight / maxGraphVal) * yVal;
+
+  ctx.fillStyle = "red";
+  ctx.beginPath();
+  ctx.roundRect(x, originY, barWidth, -barHeight, [0, 0, 4, 4]);
+  ctx.fill();
+}
+
+// iterate through userVals and draw each bar
+for (let i = 0; i <= userVals.length; i++) {
+  drawBar(originX + xIntervals * i, userVals[i]);
+}
